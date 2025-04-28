@@ -2,7 +2,6 @@
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div data-aos="fade-down" data-aos-duration="1000">
             <a href="/">
-                <img src="https://i.pinimg.com/736x/e7/76/9e/e7769e44cb342b99e4aca6e42a0df3ea.jpg" alt="" class="rounded-lg" style="width: 100px;" height="100px">
 
             </a>
         </div>

@@ -34,9 +34,7 @@
 
                     <!-- Dropdown, akan muncul setelah tombol diklik -->
                     <div x-show="profileOpen" @click.away="profileOpen = false" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50" style="display: none;">
-                        <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                            {{ __('Profile') }}
-                        </a>
+                        
 
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -76,9 +74,7 @@
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
+             
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">

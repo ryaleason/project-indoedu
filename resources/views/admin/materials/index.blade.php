@@ -43,10 +43,8 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                 <div class="flex space-x-2">
-                                    <a href="{{ route('materials.show', $material->id) }}"
-                                       class="text-blue-600 hover:text-blue-900 transition-colors">Lihat</a>
                                     <a href="{{ route('materials.edit', $material->id) }}"
-                                       class="text-indigo-600 hover:text-indigo-900 transition-colors">Edit</a>
+                                    class="text-indigo-600 hover:text-indigo-900 transition-colors">Edit</a>
                                     <form action="{{ route('materials.destroy', $material->id) }}" method="POST" class="inline-block">
                                         @csrf
                                         @method('DELETE')

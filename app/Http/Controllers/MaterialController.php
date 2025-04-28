@@ -12,7 +12,7 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        $materials = Material::all();
+        $materials = Material::paginate(10); // Change from all() to paginate()
         return view('admin.materials.index', compact('materials'));
     }
 
@@ -32,14 +32,21 @@ class MaterialController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'content' => 'required|string',
+            'content' => [
+                'required',
+                'string',
+                'regex:/^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+$/'
+            ],
+        ], [
+            'content.regex' => 'Konten harus berupa link YouTube yang valid.',
         ]);
 
-        Material::create($request->all());
+        Material::create($request->only('title', 'description', 'content'));
 
         return redirect()->route('materials.index')
             ->with('success', 'Materi berhasil ditambahkan!');
     }
+
 
     /**
      * Display the specified resource.
@@ -50,9 +57,9 @@ class MaterialController extends Controller
     }
 
     public function showuser(Material $material)
-{
-    return view('admin.materials.user', compact('material'));
-}
+    {
+        return view('admin.materials.user', compact('material'));
+    }
     /**
      * Show the form for editing the specified resource.
      */

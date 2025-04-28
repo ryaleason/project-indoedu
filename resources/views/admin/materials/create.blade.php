@@ -27,14 +27,15 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="content" class="block text-sm font-medium text-gray-700 mb-1">Konten</label>
-                    <textarea name="content" id="content" rows="10"
-                              class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 @error('content') border-red-500 @enderror"
-                              required>{{ old('content') }}</textarea>
+                    <label for="content" class="block text-sm font-medium text-gray-700 mb-1">Konten (Link YouTube)</label>
+                    <textarea name="content" id="content" rows="5"
+                        class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 @error('content') border-red-500 @enderror"
+                        required>{{ old('content') }}</textarea>
                     @error('content')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
+                
 
                 <div class="flex items-center justify-end">
                     <a href="{{ route('materials.index') }}"

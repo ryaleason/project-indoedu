@@ -33,14 +33,7 @@
                     </div>
                 </div>
             </div>
-            <div class="px-6 py-4">
-                <div class="text-right">
-                    <a href="{{ route('materials.index') }}"
-                        class="text-sm font-medium text-blue-600 hover:text-blue-500">
-                        Lihat semua materi
-                    </a>
-                </div>
-            </div>
+          
         </div>
 
 
